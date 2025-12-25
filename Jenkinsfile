@@ -20,7 +20,7 @@ pipeline {
             steps {
                 // Clean and build the application without running tests
                 //sh './gradlew clean build -x test'
-                sh './gradlew build --info'
+                sh './gradlew clean build --warning-mode all'
                 // Archive the JAR artifact(s)
                 archiveArtifacts artifacts: 'build/libs/*.jar', fingerprint: true
             }
